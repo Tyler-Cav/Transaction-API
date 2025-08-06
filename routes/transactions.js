@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.send("YOU DID IT");
+  res.send("This is the transactions root");
 });
 
 module.exports = router;

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const { sequelize, testConnection } = require("./db-connect");
+const { Client, Transaction } = require("./Models");
 const routes = require("./routes");
 
 app.use(cors());
