@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/signed-in", async (req, res) => {
+router.get("/summary", async (req, res) => {
   const { client_id } = req.query;
 
   try {
@@ -68,7 +68,7 @@ router.get("/signed-in", async (req, res) => {
       clientInfo.totalNet += transactionValue;
     }
     //return the clientInfo object to the frontend with only the necessary data.
-    res.json({ clientInfo });
+    res.status(200).json({ clientInfo });
   } catch (error) {
     console.error("Error fetching transactions:", error);
     res.status(500).json({ error: "Internal server error" });
